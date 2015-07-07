@@ -1,0 +1,38 @@
+Cartridge-Short-Name: HASKELL
+Version: '7.10.1'
+Cartridge-Version: 1.0
+Cartridge-Vendor: Eric Rochester
+Website: http://www.ericrochester.com/haskell-cartridge/nightly.yml
+Install-Build-Required: True
+Categories:
+  - haskell
+  - web_framework
+  - service
+Scaling:
+  Min: 1
+  Max: -1
+Endpoints:
+  - Private-IP-Name:   IP
+    Private-Port-Name: PORT
+    Private-Port:      8080
+    Public-Port-Name:  PROXY_PORT
+    Mappings:
+      - Frontend:      ""
+        Backend:       ""
+        Options:       {websocket: true}
+Subscribes:
+  set-env:
+    Type: ENV:*
+    Required: false
+Provides:
+  - ghc-7.10.1
+  - cabal-install-1.22.6.0
+  - text-1.2.1.1
+  - network-2.6.2.0
+  - stack-0.1.2.0
+Name: haskell
+Display-Name: Haskell
+Description: "GHC 7.10.1 and stackage nightly-2015-07-07"
+Help-Topics:
+  Haskell: http://www.haskell.org/
+Source-Url: http://www.ericrochester.com/haskell-cartridge/nightly.tar.gz
